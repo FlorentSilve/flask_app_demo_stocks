@@ -2,14 +2,32 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Hello, World!</title>
+		<title>Tiny Project</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!--<link rel=stylesheet type=text/css href='/static/style.css'>-->
 	</head>
 	<body>
-		<div>
-  			<h1>Hello, World!</h1>
-		</div>
+		<div class=page>
+  			<h1>Stock prices for the past month</h1>
+  			<div class=metanav>
+                <h4>{{errormessage|safe}}Enter a stock ticker e.g. AMZN for Amazon, and check required timeseries.</h4>
+
+    			<form id='input' method='post' action='index'>	
+	  			<p>
+					Ticker symbol: <input type='text' name='stock' value='AMZN'/>
+	  			</p>
+	  			<p>
+					Opening price <input type="radio" name='features' value='Open' checked><br>
+					Closing price <input type="radio" name='features' value='Close'><br>
+					High <input type="radio" name='features' value='High'><br>
+					Low <input type="radio" name='features' value='Low'><br>
+	    			<input type="submit" value="Submit">
+	  			</p>
+				</form>
+                <a href="http://www.marketwatch.com/tools/quotes/lookup.asp">Tickers can be found here</a>
+  			</div>
+       </div>
 	</body>
 </html>
